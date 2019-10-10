@@ -17,12 +17,20 @@ USER_INPUT = []
 current_input = ''
 
 while not(current_input == '='):
-	# while… (number vagy =)
-	# while (operator)
-	current_input = input('Type the next item: ')
-	USER_INPUT.append(current_input)
 
-print(len(USER_INPUT) % 2)
+	current_input = input('Type the next item: ')
+	
+	if (len(USER_INPUT) % 2 == 0):
+		while not(str.isdigit(current_input) or str(current_input) == '='):
+			if (str.isdigit(current_input)):
+				USER_INPUT.append(current_input)
+	else:
+		while (current_input in OPERATORS):
+			USER_INPUT.append(current_input)
+
+	print('current user input' + str(USER_INPUT) + "\n")
+
+print(USER_INPUT)
 
 # number = ''
 # numbers = []
