@@ -11,3 +11,5 @@ while not (number == str('=')):
        operations.append(number)
 
 print (numbers) 
+
+print ('this is a working copy test')
