@@ -1,0 +1,19 @@
+{
+	"items": [{
+			"name": "audi",
+			"doors": 5
+		},
+		{
+			"name": "bmw",
+			"doors": 3
+		},
+		{
+			"name": "opel",
+			"doors": 3
+		},
+		{
+			"name": "maserati",
+			"doors": 5
+		}
+	]
+}
