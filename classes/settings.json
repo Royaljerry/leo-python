@@ -1,14 +1,18 @@
 {
 	"audi": {
-		"doors": 5
+		"doors": 5,
+		"color": ["blue", "red", "yellow"]
 	},
 	"maserati": {
-		"doors": 3
+		"doors": 3,
+		"color" : ["red", "black", "blue"]
 	},
 	"opel": {
-		"doors": 2
+		"doors": 2,
+		"color": ["yellow", "black"]
 	},
 	"bmw": {
-		"doors": 18
+		"doors": 18,
+		"color": ["black", "silver"]
 	}
 }
