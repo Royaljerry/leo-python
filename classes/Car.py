@@ -16,6 +16,9 @@ class Car:
 	def go(self, distance):
 		return(self.car_name + '.'*distance)
 
+	def addXToName(self):
+		return(car_name + 'X')
+
 	def get_number_of_doors(self):
 		car_name = self.car_name
 		if (car_name in self.CARS):
