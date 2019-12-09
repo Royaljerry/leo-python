@@ -10,5 +10,5 @@ my_list = [
 	'pear'
 ]
 
-print(my_iterable[0][1])
+print(my_list[0][1])
 

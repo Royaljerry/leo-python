@@ -47,7 +47,7 @@ def gender_check(user_name):
 			return 'Ms. '	
 
 def greeting_abbr_string(string):
-	return(string + ' wow!')
+	return(string)
 
 user_name = input("Hi, my name is Chatbot, what is your name? \n")
 
