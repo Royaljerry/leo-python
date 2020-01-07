@@ -5,10 +5,16 @@ from classes.monster import Monster
 
 data = ''
 
-if __name__ == '__main__':
-	print('monsters running')
+def create_monsters(monsters_hor, monsters_ver):
+	for row in range(monsters_ver):
+		for column in range(monsters_hor):
+			print(row, column)
+
+def main():
 	with open("data/data.json", "r") as read_file:
 		data = json.load(read_file)
 		read_file.close()
-	print(data)
-	my_monster = Monster()
+	create_monsters(data['dimensions'][0], data['dimensions'][1])
+
+if __name__ == '__main__':
+	main()
