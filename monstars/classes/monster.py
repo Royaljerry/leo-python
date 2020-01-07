@@ -5,4 +5,7 @@ from classes.leg import Leg
 
 class Monster:
 	def __init__(self):
-		print('monster created')
+		self.arm = Arm()
+		self.body = Body()
+		self.head = Head()
+		self.leg = Leg()

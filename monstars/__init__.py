@@ -8,7 +8,7 @@ data = ''
 def create_monsters(monsters_hor, monsters_ver):
 	for row in range(monsters_ver):
 		for column in range(monsters_hor):
-			print(row, column)
+			monster = Monster()
 
 def main():
 	with open("data/data.json", "r") as read_file:
