@@ -1,0 +1,3 @@
+class Head:
+	def __init__(self):
+		print('head created')

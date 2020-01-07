@@ -1,6 +1,7 @@
 #!/Users/adam.pocs/.pyenv/shims/python
 
 import json
+from classes.monster import Monster
 
 data = ''
 
@@ -10,3 +11,4 @@ if __name__ == '__main__':
 		data = json.load(read_file)
 		read_file.close()
 	print(data)
+	my_monster = Monster()
