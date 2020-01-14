@@ -1,3 +1,3 @@
 class Leg:
-	def __init__(self):
-		print('leg created')
+	def __init__(self, status):
+		print(status+'leg created')
