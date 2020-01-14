@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import json
-from monstars.classes.monster import Monster
+from classes.monster import Monster
 
 data = ''
 
