@@ -1,7 +1,7 @@
-#!/Users/adam.pocs/.pyenv/shims/python
+#!/usr/bin/env python3
 
 import json
-from classes.monster import Monster
+from monstars.classes.monster import Monster
 
 data = ''
 

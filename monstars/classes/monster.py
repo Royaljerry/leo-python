@@ -1,11 +1,15 @@
-from classes.arm import Arm
-from classes.body import Body
-from classes.head import Head
-from classes.leg import Leg
+import body, arm, head, leg
+from arm import Arm
+from body import Body
+from head import Head
+from leg import Leg
+
+
 
 class Monster:
-	def __init__(self):
-		self.arm = Arm()
-		self.body = Body()
-		self.head = Head()
-		self.leg = Leg()
+    def __init__(self):
+        self.arm = Arm()
+        self.body = Body()
+        self.head = Head()
+        self.leg = Leg()
+
