@@ -4,6 +4,7 @@
 
 ### Python executables
 *.pyc
+**/*.pyc
 
 ### Android ###
 # Built application files
