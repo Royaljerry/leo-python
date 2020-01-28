@@ -4,8 +4,8 @@ class Arm:
 	def __init__(self):
 		
 		self.data_representation = {
-			'curved': ['0010'] ,
-			'straight': ['0011']
+			'curved': '0010',
+			'straight': '0011'
 		}
 
 		self.direction = random.randint(0, 2)

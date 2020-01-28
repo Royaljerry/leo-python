@@ -4,8 +4,8 @@ class Head:
 	def __init__(self):
 
 		self.data_representation = {
-			'side': ['0011'] ,
-			'front': ['0110']
+			'side': '0011' ,
+			'front': '0110'
 		}
 
 		self.direction = random.randint(0, 2)
