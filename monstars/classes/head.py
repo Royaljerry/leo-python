@@ -8,9 +8,15 @@ class Head:
 			'front': '0110'
 		}
 
-		self.direction = random.randint(0, 2)
-		if self.direction == 2 or self.direction == 0:
-			self.direction = self.data_representation['front']
-		else: 
+		self._direction = random.randint(0, 2)
+
+		if self._direction == 2:
+			self.direction = self.reverseString(self.data_representation['side'])
+		elif self._direction == 0:
 			self.direction = self.data_representation['side']
-		print('head created with direction ', self.direction)
+		elif self._direction == 1: 
+			self.direction = self.data_representation['front']
+		print('head direction ', self.direction)
+
+	def reverseString(self, string):
+		return string[::-1]

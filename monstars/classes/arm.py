@@ -8,9 +8,14 @@ class Arm:
 			'straight': '0011'
 		}
 
-		self.direction = random.randint(0, 2)
-		if self.direction == 2 or self.direction == 0:
+		self._direction = random.randint(0, 2)
+		if self._direction == 2:
+			self.direction = self.reverseString(self.data_representation['curved'])
+		elif self._direction == 0:
 			self.direction = self.data_representation['curved']
 		else: 
 			self.direction = self.data_representation['straight']
-		print('arm created with direction ', self.direction)
+		print('arm direction ', self.direction)
+
+	def reverseString(self, string):
+		return string[::-1]

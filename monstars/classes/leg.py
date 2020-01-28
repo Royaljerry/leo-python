@@ -14,10 +14,8 @@ class Leg:
 		elif self._direction == 1:
 			self.direction = self.data_representation['front']
 		
-		print('direction: ' + str(self.direction))
-	
-	# def calculate_direction(self, direction, representation):
-	# 	print(direction)
+		print('leg direction: ' + str(self.direction))
+		print('')
 
 	def reverseString(self, string):
 		return string[::-1]
