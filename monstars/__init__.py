@@ -17,6 +17,6 @@ def main():
 	create_monsters(data['dimensions'][0], data['dimensions'][1])
 
 if __name__ == '__main__':
-	str = "Horváth"
-	print(str[::-1])
+	# str = "Horváth"
+	# print(str[::-1])
 	main()
