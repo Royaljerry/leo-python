@@ -8,11 +8,15 @@ class Leg:
 
 		self.direction = random.randint(0, 2)
 		if self.direction == 2 or self.direction == 0:
-			self.direction = self.data_representation['front']
-		else: 
 			self.direction = self.data_representation['side']
+			print('reversed: ' + str(self.reverseString(self.direction)))
+		else: 
+			self.direction = self.data_representation['front']
 		print('leg created with direction ', self.direction)
 	#print(calculate_direction(direction, data_representation))
 	
 	def calculate_direction(self, direction, representation):
-		print("sel.direction: ", direction)
+		print(direction)
+
+	def reverseString(self, string):
+		return string

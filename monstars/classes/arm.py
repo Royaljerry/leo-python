@@ -13,4 +13,4 @@ class Arm:
 			self.direction = self.data_representation['curved']
 		else: 
 			self.direction = self.data_representation['straight']
-		print('leg created with direction ', self.direction)
+		print('arm created with direction ', self.direction)
