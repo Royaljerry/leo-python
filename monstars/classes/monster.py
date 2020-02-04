@@ -1,5 +1,3 @@
-import random 
-
 from classes.arm import Arm
 from classes.body import Body
 from classes.head import Head
