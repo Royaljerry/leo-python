@@ -1,3 +1,7 @@
 {
-	"dimensions": [6, 4]
+	"dimensions": [6, 4],
+	"monster_size": [50, 60],
+	"gap": 10,
+	"padding": 50,
+	"canvas_width": 6 
 }
