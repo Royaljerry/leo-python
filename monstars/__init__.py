@@ -1,7 +1,14 @@
 #!/usr/bin/env python3
 
 import json
+from PIL import Image, ImageDraw
+
+from classes import utilities
 from classes.monster import Monster
+
+monsterImage = Image.new('RGB', (200, 200), utilities.hsl(100, 50, 50))
+monsterDraw = ImageDraw.Draw(monsterImage)
+monsterImage.show()
 
 data = ''
 
