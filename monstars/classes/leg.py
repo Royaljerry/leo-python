@@ -1,4 +1,7 @@
 import random
+
+from classes import utilities
+
 class Leg:
 	def __init__(self):
 		self.data_representation = {
@@ -10,12 +13,9 @@ class Leg:
 		if self._direction == 0:
 			self.direction = self.data_representation['side']
 		elif self._direction == 2:
-			self.direction = self.reverseString(self.data_representation['side'])
+			self.direction = utilities.reverseString(self.data_representation['side'])
 		elif self._direction == 1:
 			self.direction = self.data_representation['front']
 		
 		print('leg direction: ' + str(self.direction))
 		print('')
-
-	def reverseString(self, string):
-		return string[::-1]

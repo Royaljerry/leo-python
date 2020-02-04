@@ -1,5 +1,7 @@
 import random
 
+from classes import utilities
+
 class Head:
 	def __init__(self):
 
@@ -11,12 +13,9 @@ class Head:
 		self._direction = random.randint(0, 2)
 
 		if self._direction == 2:
-			self.direction = self.reverseString(self.data_representation['side'])
+			self.direction = utilities.reverseString(self.data_representation['side'])
 		elif self._direction == 0:
 			self.direction = self.data_representation['side']
 		elif self._direction == 1: 
 			self.direction = self.data_representation['front']
 		print('head direction ', self.direction)
-
-	def reverseString(self, string):
-		return string[::-1]
