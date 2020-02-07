@@ -6,6 +6,9 @@
 *.pyc
 **/*.pyc
 
+###work env. files
+*.idea
+
 ### Android ###
 # Built application files
 *.apk
