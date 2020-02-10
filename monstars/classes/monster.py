@@ -4,9 +4,10 @@ from classes.head import Head
 from classes.leg import Leg
 
 class Monster:
-    def __init__(self):
-        self.arm = Arm()
-        self.body = Body()
-        self.head = Head()
-        self.leg = Leg()
+	def __init__(self):
+		self.left_arm = Arm()
+		self.right_arm = Arm()
+		self.body = Body()
+		self.head = Head()
+		self.leg = Leg()
 
