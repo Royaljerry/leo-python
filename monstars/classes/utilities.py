@@ -13,15 +13,5 @@ def hsl(h, s, l):
 	r += ")"
 	return r
 
-
 def get_direction():
-	if random.randint(0, 1) == 0:
-		return "side"
-	else:
-		return "front"
-
-def get_straightness():
-	if random.randint(0, 1) == 0:
-		return "straight"
-	else:
-		return "curved"
+	return(random.randint(0, 2))

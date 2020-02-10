@@ -8,4 +8,4 @@ class Leg:
 			'front'
 		]
 		
-		self.direction = utilities.get_direction()
+		self.direction = self.data_representation[utilities.get_direction()]

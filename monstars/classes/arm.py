@@ -9,4 +9,4 @@ class Arm:
 			'straight'
 		]
 
-		self.straightness = utilities.get_straightness()
+		self.direction = self.data_representation[utilities.get_direction()]

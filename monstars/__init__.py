@@ -26,8 +26,9 @@ def main():
 			(data['dimensions'][1] - 1) * int(data['gap'])) + int((data['padding'] * 2))
 	monster_image = Image.new('RGB', (image_width, image_height), utilities.hsl(100, 50, 50))
 	monster_draw = ImageDraw.Draw(monster_image)
-	monster_image.show()
-	print(monsters)
+#	monster_image.show()
+	for monster in monsters:
+		print(monster.leg.direction)
 
 if __name__ == '__main__':
 	main()
