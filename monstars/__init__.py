@@ -27,8 +27,15 @@ def main():
 	monster_image = Image.new('RGB', (image_width, image_height), utilities.hsl(100, 50, 50))
 	monster_draw = ImageDraw.Draw(monster_image)
 #	monster_image.show()
+	index = 0
 	for monster in monsters:
-		print(monster.leg.direction)
+		current_column = index % data['dimensions'][0]
+		current_row = int(index / data['dimensions'][0])
+		# current_row = #todo
+		index += 1
+		print(current_column, current_row)
+		print(coord_left_top, coord_right_bottom)
+		
 
 if __name__ == '__main__':
 	main()
