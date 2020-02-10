@@ -28,18 +28,18 @@ def main():
 	monster_draw = ImageDraw.Draw(monster_image)
 #	monster_image.show()
 	index = 0
+	gap = int(data['gap'])
+	padding = int(data['padding'])
+	monster_width = data['monster_size'][0]
+	monster_height = data['monster_size'][1]
 	for monster in monsters:
 		current_column = index % data['dimensions'][0]
 		current_row = int(index / data['dimensions'][0])
-		if current_column == 0: 
-			if current_row == 3:
-				coord_left_top = int(data['padding']) + int(data['monster_size'][0]) * (data['dimensions'][0] -1) + int(data['gap']) * (data['dimensions'][0] -1)
-				print(coord_left_top)
-
+		coord_left_top_x = padding + (current_column * (monster_width + gap))
+		coord_left_top_y = padding + (current_row * (monster_height + gap))
+		print(coord_left_top_x, coord_left_top_y)
 		index += 1
-		print(current_column, current_row)
 		# print(coord_left_top, coord_right_bottom)
-		
 
 if __name__ == '__main__':
 	main()
