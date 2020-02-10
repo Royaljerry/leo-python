@@ -31,10 +31,14 @@ def main():
 	for monster in monsters:
 		current_column = index % data['dimensions'][0]
 		current_row = int(index / data['dimensions'][0])
-		# current_row = #todo
+		if current_column == 0: 
+			if current_row == 3:
+				coord_left_top = int(data['padding']) + int(data['monster_size'][0]) * (data['dimensions'][0] -1) + int(data['gap']) * (data['dimensions'][0] -1)
+				print(coord_left_top)
+
 		index += 1
 		print(current_column, current_row)
-		print(coord_left_top, coord_right_bottom)
+		# print(coord_left_top, coord_right_bottom)
 		
 
 if __name__ == '__main__':
