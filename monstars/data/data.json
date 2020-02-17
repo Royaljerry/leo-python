@@ -1,16 +1,16 @@
 {
-	"dimensions": [6, 4],
-	"monster_size": [50, 60],
-	"gap": 20,
+	"dimensions": [10, 4],
+	"monster_size": [120, 100],
+	"gap": 10,
 	"padding": 20,
 	"palm" : [5,5],
 	"head" : [10,10],
 	"body" : [30,15],
 	"arm" : 
 	{
-			"straight": [15,5],
-			"downwards": [10,5],
-			"upwards": [10,5]		
+		"straight": [15,5],
+		"downwards": [10,5],
+		"upwards": [10,5]		
 	},
 	"leg": 
 	{

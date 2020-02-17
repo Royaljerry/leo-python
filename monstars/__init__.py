@@ -27,12 +27,34 @@ def main():
 	monster_image = Image.new('RGB', (image_width, image_height), utilities.hsl(100, 50, 50))
 	monster_draw = ImageDraw.Draw(monster_image)
 
-	index = 0
 	gap = int(data['gap'])
 	padding = int(data['padding'])
 	monster_width = data['monster_size'][0]
 	monster_height = data['monster_size'][1]
-	for monster in monsters:
+
+	# Calculate body parts
+
+	# Calculate pixel size
+
+	pixels_hor = (2 * int(data['arm']['straight'][0])) + int(data['body'][0])
+	pixels_ver = int(data['head'][1]) + int(data['body'][1]) + int(data['leg']['front'][1])
+	
+	pixel = utilities.get_real_pixel(data['monster_size'], [pixels_hor, pixels_ver])
+
+	pixel_hor = pixel[0]
+	pixel_ver = pixel[1]
+
+
+	body_top_left_x = 15 * pixel_hor
+	body_top_left_y = 10 * pixel_ver
+	body_top_right_x = (15 + 30) * pixel_hor
+	body_top_right_y = body_top_left_y
+
+
+
+
+
+	for index, monster in enumerate(monsters, start=0):
 		left_arm = data['arm'][monster.left_arm.direction]
 		right_arm = data['arm'][monster.right_arm.direction]
 		head = data['head']
@@ -42,14 +64,23 @@ def main():
 		current_column = index % data['dimensions'][0]
 		current_row = int(index / data['dimensions'][0])
 
+		# Calculate dimensions
+
 		coord_left_top_x = padding + (current_column * (monster_width + gap))
 		coord_left_top_y = padding + (current_row * (monster_height + gap))
 		coord_right_bot_x = coord_left_top_x + monster_width
 		coord_right_bot_y = coord_left_top_y + monster_height
-		
-		index += 1
-		monster_draw.rectangle([coord_left_top_x, coord_left_top_y, coord_right_bot_x, coord_right_bot_y], fill=None, outline='black')
 
+		
+		monster_draw.rectangle([coord_left_top_x, coord_left_top_y, coord_right_bot_x, coord_right_bot_y], fill=None, outline='black')
+		if monster.head.direction == 'left':
+			pass
+		elif monster.head.direction == 'right':
+			pass
+		else:
+			pass			
+
+		# elif monster.head.direction == 
 	monster_image.show()
 if __name__ == '__main__':
 	main()
