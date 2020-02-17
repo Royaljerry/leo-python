@@ -26,20 +26,30 @@ def main():
 			(data['dimensions'][1] - 1) * int(data['gap'])) + int((data['padding'] * 2))
 	monster_image = Image.new('RGB', (image_width, image_height), utilities.hsl(100, 50, 50))
 	monster_draw = ImageDraw.Draw(monster_image)
-#	monster_image.show()
+
 	index = 0
 	gap = int(data['gap'])
 	padding = int(data['padding'])
 	monster_width = data['monster_size'][0]
 	monster_height = data['monster_size'][1]
 	for monster in monsters:
+		left_arm = data['arm'][monster.left_arm.direction]
+		right_arm = data['arm'][monster.right_arm.direction]
+		head = data['head']
+		body = data['body']
+		leg = data['leg'][monster.leg.direction]
+
 		current_column = index % data['dimensions'][0]
 		current_row = int(index / data['dimensions'][0])
+
 		coord_left_top_x = padding + (current_column * (monster_width + gap))
 		coord_left_top_y = padding + (current_row * (monster_height + gap))
-		print(coord_left_top_x, coord_left_top_y)
+		coord_right_bot_x = coord_left_top_x + monster_width
+		coord_right_bot_y = coord_left_top_y + monster_height
+		
 		index += 1
-		# print(coord_left_top, coord_right_bottom)
+		monster_draw.rectangle([coord_left_top_x, coord_left_top_y, coord_right_bot_x, coord_right_bot_y], fill=None, outline='black')
 
+	monster_image.show()
 if __name__ == '__main__':
 	main()
