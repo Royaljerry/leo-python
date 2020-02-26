@@ -43,8 +43,8 @@ def main():
 		
 		#legs
 		monster_draw = img.get_legs(ox, oy, s, a, monster, monster_draw, color)
-		#TODO name
-		#####
+		#name
+		monster_draw = img.get_name(ox,oy,s,a,monster_draw)
 
 		#display image
 	monster_image.show()
@@ -52,4 +52,4 @@ def main():
 if __name__ == '__main__':
 	main()
 
-#TODO pixel konvertáló fgv, nevek, háttér-figura eltérés, arc, minta, background, feet direction refactor, size setter
+#TODO háttér-figura eltérés, arc, minta, background,

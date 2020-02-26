@@ -1,23 +1,23 @@
 {
 	"dimensions": [6, 4],
-	"monster_size": [50, 60],
-	"gap": [10],
-	"padding": [20],
-	"palm" : [5,5],
-	"foot" : [5,5],
-	"head" : [10,10],
-	"body" : [25,35],
+	"monster_size": [500, 600],
+	"gap": [150],
+	"padding": [200],
+	"palm" : [50,50],
+	"foot" : [50,50],
+	"head" : [100,100],
+	"body" : [250,350],
 	"arm" :
 	{
-		"straight": [12.5,5],
-		"downwards": [7.5,5],
-		"upwards": [7.5,5]
+		"straight": [125,50],
+		"downwards": [75,50],
+		"upwards": [75,50]
 	},
 	"leg": 
 	{
-		"front":[5,15],
-		"left":[5, 10],
-		"right":[5, 10]
+		"front":[50,150],
+		"left":[50, 100],
+		"right":[50, 100]
 	}
 }
 

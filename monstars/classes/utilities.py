@@ -2,7 +2,7 @@ from PIL import Image, ImageDraw
 import random
 import json
 from classes.monster import Monster
-
+from classes.properties import Sizes, Attributes
 def reader():
 	props = {
 		"arm": {
@@ -16,33 +16,42 @@ def reader():
 			"right": []
 			}
 		}
-	choice = input('1 : alapértelmezett beállítások\n2: egyéni méretek ')
+	choice = input('1 : alapértelmezett beállítások\n2 : egyéni méretek ')
+	while True:
+		if choice == '1' or choice == '2':
+			break
+		else:
+			choice = input('1 / 2 ')
 	if choice == '1':
 		alapertelmezett = "data/data.json"
 		with open(alapertelmezett, "r") as f:
 			data=json.load(f)
 			f.close()
 	elif choice == '2':
-		with open('data/user_size.json', "w") as f:
-			props["dimensions"] = splitter(input('dimensions: '))
-			props["monster_size"] = splitter(input('monsters size: '))
-			props["gap"] = splitter(input('margin: '))
-			props["padding"] = splitter(input('padding: '))
-			props["palm"] = splitter(input('palms: '))
-			props["foot"] = splitter(input('feet: '))
-			props["head"] = splitter(input('head: '))
-			props["body"] = splitter(input('body: '))
-			props["arm"]["straight"] = splitter(input('arm: '))
-			props["arm"]["downwards"] = [props["arm"]["straight"][0] - props["palm"][0], props["arm"]["straight"][0] ]
-			props["arm"]["upwards"] = props["arm"]["downwards"]
-			props["leg"]["front"] = splitter(input("legs: "))
-			props["leg"]["left"] = props["leg"]["front"][0], props["leg"]["front"][1] - props["foot"][1]
-			props["leg"]["right"] = props["leg"]["left"]
-			json.dump(props, f)
-			f.close()
-			with open("data/user_size.json", "r") as f:
-				data = json.load(f)
+		try:
+			with open('data/user_size.json', "w") as f:
+				props["dimensions"] = splitter(input('dimensions: '))
+				props["monster_size"] = splitter(input('monsters size: '))
+				props["gap"] = splitter(input('margin: '))
+				props["padding"] = splitter(input('padding: '))
+				props["palm"] = splitter(input('palms: '))
+				props["foot"] = splitter(input('feet: '))
+				props["head"] = splitter(input('head: '))
+				props["body"] = splitter(input('body: '))
+				props["arm"]["straight"] = splitter(input('arm: '))
+				props["arm"]["downwards"] = [props["arm"]["straight"][0] - props["palm"][0], props["arm"]["straight"][0] ]
+				props["arm"]["upwards"] = props["arm"]["downwards"]
+				props["leg"]["front"] = splitter(input("legs: "))
+				props["leg"]["left"] = props["leg"]["front"][0], props["leg"]["front"][1] - props["foot"][1]
+				props["leg"]["right"] = props["leg"]["left"]
+				json.dump(props, f)
 				f.close()
+				with open("data/user_size.json", "r") as f:
+					data = json.load(f)
+					f.close()
+		except:
+			print('Hibás adatbevitel, újrakezdés...')
+			reader()
 	return data
 
 def create_monsters(monsters_hor, monsters_ver):
@@ -88,4 +97,10 @@ def splitter(inp):
         r.append(float(n))
     return r
 
+def convert_x(x,a):
+	x *a.ph
+	return x
+def convert_y(y,a):
+	y *a.pv
+	return y
 
