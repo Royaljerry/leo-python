@@ -59,7 +59,7 @@ def get_right_arm(x,y,s,a,monster, monster_draw, color):
 		px2 = px1 + s.palm_length	
 		if monster.left_arm.direction == 'downwards':
 			py1 = y2 
-			py2 = py1 + s.palm_height *a.pv
+			py2 = py1 + s.palm_height 
 			monster_draw.rectangle([util.convert_x(px1,a),util.convert_y(py1,a),util.convert_x(px2,a),util.convert_y(py2,a)], fill = color)
 		else:
 			py1 = y1 -s.palm_height 
@@ -74,7 +74,7 @@ def get_legs(x,y,s,a,monster, monster_draw, color):
 	y1 = y + s.head_height+ s.body_height
 
 	if monster.leg.direction == 'front':
-		y2 = y1 + s.leg_height *a.pv
+		y2 = y1 + s.leg_height 
 		monster_draw.rectangle([util.convert_x(x1,a),util.convert_y(y1,a),util.convert_x(x2,a),util.convert_y(y2,a)], fill = color)
 		x1 = x + s.arm_length + s.body_length /6* 4 
 		x2 = x1 + s.leg_length 
@@ -98,26 +98,19 @@ def get_legs(x,y,s,a,monster, monster_draw, color):
 			monster_draw.rectangle([util.convert_x((x1 - s.foot_length),a), util.convert_y(y2,a), util.convert_x(x1,a), util.convert_y((y2+ s.foot_height),a)], fill= color )
 	return monster_draw
 
-def get_name(x,y,s,a, monster_draw):
-	names =  []
-	prefix = 'xxxxxxxx'
-	with open('data/names.txt','r') as f:
-		rawdata = f.readlines()
-		f.close()
-		for i in rawdata:
-			names.append(i.strip())
-	while True:
-		i = random.randint(0, len(names)-1)
-		monster_name = names[i]
-		if len(monster_name) < len(prefix):
-			break
+def get_name(x,y,s,a, monster_draw,names,index):
+	prefix = ''
+	for i in names:
+		if len(i) > len(prefix):
+			prefix = i
 	c = 1
 	font = ImageFont.truetype("arial.ttf", c)
 	while font.getsize(prefix)[0] < a.monster_width:
 		c += 1
 		font = ImageFont.truetype("arial.ttf", c)
-	print(c)
-	x1 = x 
+	if font.getsize(prefix)[0] > a.monster_width:
+		c -=1
+	x1 = x
 	y1 = y + s.head_height + s.body_height + s.leg_height
-	monster_draw.text((util.convert_x(x1,a),util.convert_y(y1,a)),monster_name, fill='black', font=font)
+	monster_draw.text((util.convert_x(x1,a),util.convert_y(y1,a)),names[index], fill='black', font=font)
 	return monster_draw

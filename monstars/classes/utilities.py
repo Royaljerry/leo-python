@@ -103,4 +103,16 @@ def convert_x(x,a):
 def convert_y(y,a):
 	y *a.pv
 	return y
+def get_names(a):
+	names = []
+	with open('data/names.txt','r') as f:
+			data = f.readlines()
+			f.close()
+	for line in data:
+		line = line.strip()
+		if random.randint(0,1) == 1: 
+			names.append(line)
+		if len(names) == a.rows * a.columns:
+			break
+	return names
 
