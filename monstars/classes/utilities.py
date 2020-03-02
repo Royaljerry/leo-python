@@ -97,10 +97,18 @@ def splitter(inp):
         r.append(float(n))
     return r
 
-def convert_x(x,a):
+def convert_x(x):
+	with open('data/data.json', 'r') as f:
+		data = json.load(f)
+		f.close()
+	a = Attributes(data)
 	x *a.ph
 	return x
-def convert_y(y,a):
+def convert_y(y):
+	with open('data/data.json', 'r') as f:
+		data = json.load(f)
+		f.close()
+	a = Attributes(data)
 	y *a.pv
 	return y
 def get_names(a):

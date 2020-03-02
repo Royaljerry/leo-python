@@ -10,6 +10,9 @@ class Sizes:
 		self.body_length = data['body'][0]
 		self.body_height = data['body'][1]
 
+		self.pattern_length = data['pattern'][0]
+		self.pattern_height = data['pattern'][1]
+		
 		self.arm_length = data['arm']['straight'][0]
 		self.arm_height = data['arm']['straight'][1]
 		

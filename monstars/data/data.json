@@ -1,6 +1,7 @@
 {
 	"dimensions": [6, 4],
 	"monster_size": [500, 600],
+	"pattern" : [20,20],
 	"gap": [150],
 	"padding": [200],
 	"palm" : [50,50],
